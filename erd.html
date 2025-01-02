@@ -65,13 +65,26 @@
                     Berikut adalah penjelasan untuk setiap komponen yang ada dalam diagram ini:
                 </p>
                 <ul>
-                  <li><strong>Entity "Mekanik"</strong>: Menyimpan informasi tentang mekanik, seperti nama, kartu kerja, keahlian, dan kontak (telepon) mekanik.</li>
-                  <li><strong>Entity "Kendaraan"</strong>: Menyimpan data kendaraan yang dimiliki oleh pelanggan, termasuk plat nomor, merek, tipe, status perawatan, dan pemilik kendaraan.</li>
-                  <li><strong>Entity "Perawatan"</strong>: Menyimpan data layanan perawatan yang diberikan kepada kendaraan, termasuk jenis perawatan, biaya, tanggal perawatan, dan status perawatan.</li>
-                  <li><strong>Entity "Pembayaran"</strong>: Menyimpan data pembayaran terkait dengan perawatan, termasuk tanggal pembayaran, jumlah pembayaran, metode pembayaran, dan status pembayaran.</li>
-                  <li><strong>Entity "Customer"</strong>: Menyimpan data tentang pelanggan, termasuk nama, alamat, telepon, email, serta kendaraan dan pembayaran yang terkait dengan pelanggan tersebut.</li>
-                  <li><strong>Relasi antar entitas</strong>: Setiap pelanggan (Customer) dapat memiliki beberapa kendaraan (Kendaraan), setiap kendaraan dapat menerima beberapa perawatan (Perawatan), dan setiap perawatan dikerjakan oleh satu mekanik (Mekanik). Selain itu, setiap perawatan memiliki pembayaran terkait (Pembayaran), dan setiap pembayaran dilakukan oleh pelanggan (Customer). Relasi ini menggambarkan bagaimana data antar entitas terhubung.</li>
-                </ul>
+    <li><strong>Entity "Perawatan"</strong>: Menyimpan data layanan perawatan yang diberikan kepada kendaraan, termasuk jenis perawatan, biaya perawatan, tanggal perawatan, dan status perawatan.</li>
+    <li><strong>Entity "Mekanik"</strong>: Menyimpan informasi tentang mekanik, seperti nama, kartu kerja, keahlian, dan kontak (telepon) mekanik.</li>
+    <li><strong>Entity "Kendaraan"</strong>: Menyimpan data kendaraan yang dimiliki oleh pelanggan, termasuk plat nomor, merek, tipe, status perawatan, dan pemilik kendaraan.</li>
+    <li><strong>Entity "Bengkel"</strong>: Menyimpan informasi tentang bengkel yang menangani perawatan kendaraan, termasuk kaitannya dengan mekanik, kendaraan, dan perawatan.</li>
+    <li><strong>Entity "Customer"</strong>: Menyimpan data pelanggan, seperti nama, alamat, telepon, email, dan profil pelanggan.</li>
+    <li><strong>Entity "Pembayaran"</strong>: Menyimpan data pembayaran terkait dengan perawatan, termasuk tanggal pembayaran, jumlah pembayaran, metode pembayaran, dan status pembayaran.</li>
+    <li><strong>Entity "Profil"</strong>: Menyimpan data profil pelanggan, seperti nama, alamat, dan tanggal lahir.</li>
+    <br>
+    <li><strong>Relasi antar entitas</strong>: 
+        <ul>
+            <li><strong>Perawatan - Kendaraan</strong>: Setiap perawatan terkait dengan satu kendaraan, tetapi satu kendaraan dapat memiliki banyak perawatan (1:M).</li>
+            <li><strong>Perawatan - Mekanik</strong>: Setiap perawatan dilakukan oleh satu mekanik, tetapi satu mekanik dapat menangani banyak perawatan (1:M).</li>
+            <li><strong>Perawatan - Bengkel</strong>: Setiap perawatan dilakukan di satu bengkel, tetapi satu bengkel dapat menangani banyak perawatan (1:M).</li>
+            <li><strong>Kendaraan - Customer</strong>: Setiap kendaraan dimiliki oleh satu pelanggan, tetapi satu pelanggan dapat memiliki banyak kendaraan (1:M).</li>
+            <li><strong>Pembayaran - Perawatan</strong>: Setiap pembayaran terkait dengan satu perawatan, tetapi satu perawatan dapat memiliki banyak pembayaran (1:M).</li>
+            <li><strong>Customer - Profil</strong>: Setiap pelanggan memiliki satu profil, dan setiap profil terkait dengan satu pelanggan (1:1).</li>
+        </ul>
+    </li>
+</ul>
+
             </div>
         </div>
     </section>
