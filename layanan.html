@@ -142,48 +142,40 @@
     <!-- JavaScript -->
     <script>
       function tampilkanDeskripsi() {
-        const deskripsi = {
-          mekanik1: `
+  const deskripsi = {
+    mekanik1: `
       <div class="p-3 border rounded bg-light">
         <h5 class="text-primary">Doni Setiawan Ramadhan</h5>
-        <p><strong>ID:</strong> 2457201007</p>
-        <p><strong>Keahlian:</strong> Perawatan dan Perbaikan Mesin</p>
-        <p><em>Doni adalah seorang mekanik yang berpengalaman dalam perawatan berkala dan perbaikan mesin kendaraan. Beliau memastikan setiap kendaraan yang ditangani bekerja dengan efisiensi optimal.</em></p>
+        <p><strong>Spesialisasi:</strong> Perawatan dan Perbaikan Mesin</p>
+        <p>Doni memiliki keahlian dalam perawatan mesin kendaraan, termasuk perawatan rutin seperti ganti oli dan pembersihan. Ia juga menangani perbaikan mesin jika ada masalah seperti mesin tidak menyala atau kebocoran, serta memastikan kinerja mesin tetap optimal.</p>
       </div>
     `,
-          mekanik2: `
+    mekanik2: `
       <div class="p-3 border rounded bg-light">
         <h5 class="text-primary">Dena Agustin</h5>
-        <p><strong>ID:</strong> 2457201017</p>
-        <p><strong>Keahlian:</strong> Diagnosis Masalah Kendaraan</p>
-        <p><strong>No Telepon:</strong> +49-170-1234-5678</p>
-        <p><em>Dena unggul dalam mendiagnosis masalah kendaraan secara cepat dan akurat, memberikan solusi terbaik untuk perbaikan lebih lanjut.</em></p>
+        <p><strong>Spesialisasi:</strong> Diagnosis Masalah Kendaraan</p>
+        <p>Dena unggul dalam mendiagnosis masalah kendaraan, baik itu masalah mesin, kelistrikan, atau sistem lainnya. Dengan menggunakan alat diagnosis canggih, Dena dapat menemukan akar permasalahan dan memberikan solusi tepat untuk perbaikan lebih lanjut.</p>
       </div>
     `,
-          mekanik3: `
+    mekanik3: `
       <div class="p-3 border rounded bg-light">
         <h5 class="text-primary">Nazla Khaerunisa</h5>
-        <p><strong>ID:</strong> 2457201020</p>
-        <p><strong>Keahlian:</strong> Sistem Transmisi dan Kopling</p>
-        <p><strong>No Telepon:</strong> +61-438-9101-2345</p>
-        <p><em>Nazla adalah spesialis dalam perbaikan sistem transmisi dan kopling, memastikan kendaraan berfungsi dengan mulus dalam berbagai kondisi.</em></p>
+        <p><strong>Spesialisasi:</strong> Sistem Transmisi dan Kopling</p>
+        <p>Nazla adalah spesialis dalam perbaikan transmisi dan kopling kendaraan. Ia memastikan transmisi berfungsi dengan lancar dan kopling beroperasi dengan baik agar kendaraan dapat berjalan mulus tanpa gangguan.</p>
       </div>
     `,
-          mekanik4: `
+    mekanik4: `
       <div class="p-3 border rounded bg-light">
         <h5 class="text-primary">Rizki Saepuloh</h5>
-        <p><strong>ID:</strong> 2457201021</p>
-        <p><strong>Keahlian:</strong> Sistem Kelistrikan Kendaraan</p>
-        <p><em>Rizki adalah ahli dalam sistem kelistrikan kendaraan, menangani perbaikan dan instalasi komponen elektrik dengan ketelitian tinggi.</em></p>
+        <p><strong>Spesialisasi:</strong> Sistem Kelistrikan Kendaraan</p>
+        <p>Rizki menguasai perbaikan sistem kelistrikan kendaraan, mulai dari penggantian kabel yang rusak hingga instalasi sistem kelistrikan baru. Keahliannya sangat penting untuk memastikan sistem elektrik kendaraan berfungsi dengan baik, mulai dari lampu hingga sistem pengisian daya.</p>
       </div>
     `,
-          mekanik5: `
+    mekanik5: `
       <div class="p-3 border rounded bg-light">
         <h5 class="text-primary">Komala Dewi</h5>
-        <p><strong>ID:</strong> 2457201036</p>
-        <p><strong>Keahlian:</strong> Perbaikan Sistem Rem dan Suspensi</p>
-        <p><strong>No Telepon:</strong> +33-6-7890-1234</p>
-        <p><em>Komala memiliki keahlian dalam memperbaiki rem dan suspensi kendaraan, memberikan keamanan dan kenyamanan optimal bagi pengguna jalan.</em></p>
+        <p><strong>Spesialisasi:</strong> Perbaikan Sistem Rem dan Suspensi</p>
+        <p>Komala adalah ahli dalam perbaikan sistem rem dan suspensi. Ia memastikan sistem rem kendaraan berfungsi dengan baik untuk keselamatan pengemudi, serta perbaikan suspensi agar kendaraan nyaman digunakan dan aman di jalan raya.</p>
       </div>
     `
   };
@@ -192,8 +184,7 @@
   const deskripsiMekanik = document.getElementById("deskripsiMekanik");
 
   if (pilihanMekanik) {
-    deskripsiMekanik.innerHTML = deskripsi[pilihanMekanik] || 
-      '<div class="text-danger">Deskripsi tidak tersedia.</div>';
+    deskripsiMekanik.innerHTML = deskripsi[pilihanMekanik] || "Deskripsi tidak tersedia.";
   } else {
     deskripsiMekanik.innerHTML = "";
   }
