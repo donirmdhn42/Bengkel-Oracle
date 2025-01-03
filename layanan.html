@@ -144,49 +144,60 @@
       function tampilkanDeskripsi() {
         const deskripsi = {
           mekanik1: `
-            <strong>Doni Setiawan Ramadhan</strong><br>
-            <strong>ID:</strong> 2457201007<br>
-            <strong>Keahlian:</strong> Perawatan dan Perbaikan Mesin<br>
-            <em>Doni adalah seorang mekanik yang berpengalaman dalam perawatan berkala dan perbaikan mesin kendaraan. Beliau memastikan setiap kendaraan yang ditangani bekerja dengan efisiensi optimal.</em>
-          `,
+      <div class="p-3 border rounded bg-light">
+        <h5 class="text-primary">Doni Setiawan Ramadhan</h5>
+        <p><strong>ID:</strong> 2457201007</p>
+        <p><strong>Keahlian:</strong> Perawatan dan Perbaikan Mesin</p>
+        <p><em>Doni adalah seorang mekanik yang berpengalaman dalam perawatan berkala dan perbaikan mesin kendaraan. Beliau memastikan setiap kendaraan yang ditangani bekerja dengan efisiensi optimal.</em></p>
+      </div>
+    `,
           mekanik2: `
-            <strong>Dena Agustin</strong><br>
-            <strong>ID:</strong> 2457201017<br>
-            <strong>Keahlian:</strong> Diagnosis Masalah Kendaraan<br>
-            <strong>No Telepon:</strong> +49-170-1234-5678<br>
-            <em>Dena unggul dalam mendiagnosis masalah kendaraan secara cepat dan akurat, memberikan solusi terbaik untuk perbaikan lebih lanjut.</em>
-          `,
+      <div class="p-3 border rounded bg-light">
+        <h5 class="text-primary">Dena Agustin</h5>
+        <p><strong>ID:</strong> 2457201017</p>
+        <p><strong>Keahlian:</strong> Diagnosis Masalah Kendaraan</p>
+        <p><strong>No Telepon:</strong> +49-170-1234-5678</p>
+        <p><em>Dena unggul dalam mendiagnosis masalah kendaraan secara cepat dan akurat, memberikan solusi terbaik untuk perbaikan lebih lanjut.</em></p>
+      </div>
+    `,
           mekanik3: `
-            <strong>Nazla Khaerunisa</strong><br>
-            <strong>ID:</strong> 2457201020<br>
-            <strong>Keahlian:</strong> Sistem Transmisi dan Kopling<br>
-            <strong>No Telepon:</strong> +61-438-9101-2345<br>
-            <em>Nazla adalah spesialis dalam perbaikan sistem transmisi dan kopling, memastikan kendaraan berfungsi dengan mulus dalam berbagai kondisi.</em>
-          `,
+      <div class="p-3 border rounded bg-light">
+        <h5 class="text-primary">Nazla Khaerunisa</h5>
+        <p><strong>ID:</strong> 2457201020</p>
+        <p><strong>Keahlian:</strong> Sistem Transmisi dan Kopling</p>
+        <p><strong>No Telepon:</strong> +61-438-9101-2345</p>
+        <p><em>Nazla adalah spesialis dalam perbaikan sistem transmisi dan kopling, memastikan kendaraan berfungsi dengan mulus dalam berbagai kondisi.</em></p>
+      </div>
+    `,
           mekanik4: `
-            <strong>Rizki Saepuloh</strong><br>
-            <strong>ID:</strong> 2457201021<br>
-            <strong>Keahlian:</strong> Sistem Kelistrikan Kendaraan<br>
-            <em>Rizki adalah ahli dalam sistem kelistrikan kendaraan, menangani perbaikan dan instalasi komponen elektrik dengan ketelitian tinggi.</em>
-          `,
+      <div class="p-3 border rounded bg-light">
+        <h5 class="text-primary">Rizki Saepuloh</h5>
+        <p><strong>ID:</strong> 2457201021</p>
+        <p><strong>Keahlian:</strong> Sistem Kelistrikan Kendaraan</p>
+        <p><em>Rizki adalah ahli dalam sistem kelistrikan kendaraan, menangani perbaikan dan instalasi komponen elektrik dengan ketelitian tinggi.</em></p>
+      </div>
+    `,
           mekanik5: `
-            <strong>Komala Dewi</strong><br>
-            <strong>ID:</strong> 2457201036<br>
-            <strong>Keahlian:</strong> Perbaikan Sistem Rem dan Suspensi<br>
-            <strong>No Telepon:</strong> +33-6-7890-1234<br>
-            <em>Komala memiliki keahlian dalam memperbaiki rem dan suspensi kendaraan, memberikan keamanan dan kenyamanan optimal bagi pengguna jalan.</em>
-          `
-        };
+      <div class="p-3 border rounded bg-light">
+        <h5 class="text-primary">Komala Dewi</h5>
+        <p><strong>ID:</strong> 2457201036</p>
+        <p><strong>Keahlian:</strong> Perbaikan Sistem Rem dan Suspensi</p>
+        <p><strong>No Telepon:</strong> +33-6-7890-1234</p>
+        <p><em>Komala memiliki keahlian dalam memperbaiki rem dan suspensi kendaraan, memberikan keamanan dan kenyamanan optimal bagi pengguna jalan.</em></p>
+      </div>
+    `
+  };
 
-        const pilihanMekanik = document.getElementById("pilihanMekanik").value;
-        const deskripsiMekanik = document.getElementById("deskripsiMekanik");
+  const pilihanMekanik = document.getElementById("pilihanMekanik").value;
+  const deskripsiMekanik = document.getElementById("deskripsiMekanik");
 
-        if (pilihanMekanik) {
-          deskripsiMekanik.innerHTML = deskripsi[pilihanMekanik] || "Deskripsi tidak tersedia.";
-        } else {
-          deskripsiMekanik.innerHTML = "";
-        }
-      }
+  if (pilihanMekanik) {
+    deskripsiMekanik.innerHTML = deskripsi[pilihanMekanik] || 
+      '<div class="text-danger">Deskripsi tidak tersedia.</div>';
+  } else {
+    deskripsiMekanik.innerHTML = "";
+  }
+}
     </script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
