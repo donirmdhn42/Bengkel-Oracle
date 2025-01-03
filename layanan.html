@@ -81,16 +81,39 @@
           </div>
           <!-- Pilihan Mekanik -->
           <div class="mb-3">
-              <label for="pilihanMekanik" class="form-label">Pilih Mekanik</label>
-              <select class="form-select form-select-lg" id="pilihanMekanik" required>
-                  <option value="" disabled selected>Pilih salah satu mekanik</option>
-                  <option value="mekanik1">Doni Setiawan Ramadhan</option>
-                  <option value="mekanik2">Dena Agustina</option>
-                  <option value="mekanik3">Nazla Khaerunisa</option>
-                  <option value="mekanik3">Rizki Saepuloh</option>
-                  <option value="mekanik3">Komala Dewi</option>
-              </select>
-          </div>
+    <label for="pilihanMekanik" class="form-label">Pilih Mekanik</label>
+    <select class="form-select form-select-lg" id="pilihanMekanik" onchange="tampilkanDeskripsi()" required>
+        <option value="" disabled selected>Pilih salah satu mekanik</option>
+        <option value="mekanik1">Doni Setiawan Ramadhan</option>
+        <option value="mekanik2">Dena Agustina</option>
+        <option value="mekanik3">Nazla Khaerunisa</option>
+        <option value="mekanik4">Rizki Saepuloh</option>
+        <option value="mekanik5">Komala Dewi</option>
+    </select>
+</div>
+<div id="deskripsiMekanik" class="mt-3"></div>
+
+<script>
+    function tampilkanDeskripsi() {
+        const deskripsi = {
+            mekanik1: "Doni Setiawan Ramadhan: Ahli dalam perawatan mesin umum.",
+            mekanik2: "Dena Agustina: Berpengalaman dalam perbaikan rem dan suspensi.",
+            mekanik3: "Nazla Khaerunisa: Spesialis dalam diagnostik elektronik kendaraan.",
+            mekanik4: "Rizki Saepuloh: Fokus pada perawatan ban dan keseimbangan roda.",
+            mekanik5: "Komala Dewi: Ahli dalam perbaikan sistem AC kendaraan."
+        };
+
+        const pilihanMekanik = document.getElementById("pilihanMekanik").value;
+        const deskripsiMekanik = document.getElementById("deskripsiMekanik");
+
+        if (pilihanMekanik) {
+            deskripsiMekanik.textContent = deskripsi[pilihanMekanik] || "Deskripsi tidak tersedia.";
+        } else {
+            deskripsiMekanik.textContent = "";
+        }
+    }
+</script>
+
           <!-- Tombol Order -->
           <div class="text-center">
               <a href="pembayaran.html">
