@@ -142,8 +142,6 @@
     <!-- JavaScript -->
     <script>
       function tampilkanDeskripsi() {
-        <script>
-      function tampilkanDeskripsi() {
         const deskripsi = {
           mekanik1: `
             <strong>Doni Setiawan Ramadhan</strong><br>
@@ -152,31 +150,31 @@
             <em>Doni adalah seorang mekanik yang berpengalaman dalam perawatan berkala dan perbaikan mesin kendaraan. Beliau memastikan setiap kendaraan yang ditangani bekerja dengan efisiensi optimal.</em>
           `,
           mekanik2: `
-            <strong>Rizki Saepuloh</strong><br>
-            <strong>ID:</strong> 2457201021<br>
-            <strong>Keahlian:</strong> Sistem Kelistrikan Kendaraan<br>
-            <em>Rizki adalah ahli dalam sistem kelistrikan kendaraan, menangani perbaikan dan instalasi komponen elektrik dengan ketelitian tinggi.</em>
+            <strong>Dena Agustin</strong><br>
+            <strong>ID:</strong> 2457201017<br>
+            <strong>Keahlian:</strong> Diagnosis Masalah Kendaraan<br>
+            <strong>No Telepon:</strong> +49-170-1234-5678<br>
+            <em>Dena unggul dalam mendiagnosis masalah kendaraan secara cepat dan akurat, memberikan solusi terbaik untuk perbaikan lebih lanjut.</em>
           `,
           mekanik3: `
-            <strong>Komala Dewi</strong><br>
-            <strong>ID:</strong> 2457201036<br>
-            <strong>Keahlian:</strong> Perbaikan Sistem Rem dan Suspensi<br>
-            <strong>No Telepon:</strong> +33-6-7890-1234<br>
-            <em>Komala memiliki keahlian dalam memperbaiki rem dan suspensi kendaraan, memberikan keamanan dan kenyamanan optimal bagi pengguna jalan.</em>
-          `,
-          mekanik4: `
             <strong>Nazla Khaerunisa</strong><br>
             <strong>ID:</strong> 2457201020<br>
             <strong>Keahlian:</strong> Sistem Transmisi dan Kopling<br>
             <strong>No Telepon:</strong> +61-438-9101-2345<br>
             <em>Nazla adalah spesialis dalam perbaikan sistem transmisi dan kopling, memastikan kendaraan berfungsi dengan mulus dalam berbagai kondisi.</em>
           `,
+          mekanik4: `
+            <strong>Rizki Saepuloh</strong><br>
+            <strong>ID:</strong> 2457201021<br>
+            <strong>Keahlian:</strong> Sistem Kelistrikan Kendaraan<br>
+            <em>Rizki adalah ahli dalam sistem kelistrikan kendaraan, menangani perbaikan dan instalasi komponen elektrik dengan ketelitian tinggi.</em>
+          `,
           mekanik5: `
-            <strong>Dena Agustin</strong><br>
-            <strong>ID:</strong> 2457201017<br>
-            <strong>Keahlian:</strong> Diagnosis Masalah Kendaraan<br>
-            <strong>No Telepon:</strong> +49-170-1234-5678<br>
-            <em>Dena unggul dalam mendiagnosis masalah kendaraan secara cepat dan akurat, memberikan solusi terbaik untuk perbaikan lebih lanjut.</em>
+            <strong>Komala Dewi</strong><br>
+            <strong>ID:</strong> 2457201036<br>
+            <strong>Keahlian:</strong> Perbaikan Sistem Rem dan Suspensi<br>
+            <strong>No Telepon:</strong> +33-6-7890-1234<br>
+            <em>Komala memiliki keahlian dalam memperbaiki rem dan suspensi kendaraan, memberikan keamanan dan kenyamanan optimal bagi pengguna jalan.</em>
           `
         };
 
@@ -184,19 +182,17 @@
         const deskripsiMekanik = document.getElementById("deskripsiMekanik");
 
         if (pilihanMekanik) {
-          deskripsiMekanik.textContent = deskripsi[pilihanMekanik] || "Deskripsi tidak tersedia.";
+          deskripsiMekanik.innerHTML = deskripsi[pilihanMekanik] || "Deskripsi tidak tersedia.";
         } else {
-          deskripsiMekanik.textContent = "";
+          deskripsiMekanik.innerHTML = "";
         }
       }
     </script>
 
-    <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
-    <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
