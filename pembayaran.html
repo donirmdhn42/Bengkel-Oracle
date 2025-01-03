@@ -78,49 +78,50 @@
         <!-- Kolom Form Konfirmasi Pembayaran Kanan -->
         <div class="col-md-6">
           <!-- Form Konfirmasi Pembayaran -->
-          <form id="paymentForm" action="#" method="POST" class="shadow p-4 rounded bg-light">
-            <h4>Metode Pembayaran</h4>
+          <!-- Form Konfirmasi Pembayaran -->
+<form id="paymentForm" action="#" method="POST" class="shadow p-4 rounded bg-light">
+  <h4>Metode Pembayaran</h4>
 
-            <!-- Pilihan Metode Pembayaran -->
-            <div class="mb-3">
-              <label for="payment_method" class="form-label">Pilih Metode Pembayaran</label>
-              <select class="form-control" id="payment_method" name="payment_method" required>
-                <option value="rekening">Transfer Rekening</option>
-                <option value="qris">Pembayaran QRIS</option>
-              </select>
-            </div>
+  <!-- Pilihan Metode Pembayaran -->
+  <div class="mb-3">
+    <label for="payment_method" class="form-label">Pilih Metode Pembayaran</label>
+    <select class="form-control" id="payment_method" name="payment_method" required>
+      <option value="rekening">Transfer Rekening</option>
+      <option value="qris">Pembayaran QRIS</option>
+    </select>
+  </div>
 
-            <!-- Rekening Pembayaran -->
-            <div id="rekening_section" class="mb-3">
-              <label for="rekening" class="form-label">Nomor Rekening Pembayaran</label>
-              <input type="text" class="form-control" id="rekening" name="rekening" placeholder="Masukkan nomor rekening" required />
-            </div>
+  <!-- Rekening Pembayaran -->
+  <div id="rekening_section" class="mb-3">
+    <label for="rekening" class="form-label">Nomor Rekening Pembayaran</label>
+    <input type="text" class="form-control" id="rekening" name="rekening" placeholder="Masukkan nomor rekening" required />
+  </div>
 
-            <!-- QRIS Pembayaran -->
-            <div id="qris_section" class="text-center mb-3" style="display: none">
-              <h5>Atau Pembayaran QRIS</h5>
-              <p>Anda bisa melakukan pembayaran melalui QRIS dengan memindai kode di bawah ini:</p>
-              <img src="https://institutkemandirian.org/wp-content/uploads/2021/04/barcode-qris-infak-ddsulsel-1024x1021.png" alt="QR Code Pembayaran" class="img-fluid" />
-            </div>
+  <!-- QRIS Pembayaran -->
+  <div id="qris_section" class="text-center mb-3" style="display: none">
+    <h5>Atau Pembayaran QRIS</h5>
+    <p>Anda bisa melakukan pembayaran melalui QRIS dengan memindai kode di bawah ini:</p>
+    <img src="https://institutkemandirian.org/wp-content/uploads/2021/04/barcode-qris-infak-ddsulsel-1024x1021.png" alt="QR Code Pembayaran" class="img-fluid" />
+  </div>
 
-            <!-- Nama Pembayar -->
-            <div class="mb-3">
-              <label for="nama_pembayar" class="form-label">Nama Pembayar</label>
-              <input type="text" class="form-control" id="nama_pembayar" name="nama_pembayar" placeholder="Masukkan nama lengkap Anda" required />
-            </div>
+  <!-- Nama Pembayar -->
+  <div class="mb-3">
+    <label for="nama_pembayar" class="form-label">Nama Pembayar</label>
+    <input type="text" class="form-control" id="nama_pembayar" name="nama_pembayar" placeholder="Masukkan nama lengkap Anda" required />
+  </div>
 
-            <!-- Tanggal Pembayaran -->
-            <div class="mb-3">
-              <label for="tanggal_pembayaran" class="form-label">Tanggal Pembayaran</label>
-              <input type="date" class="form-control" id="tanggal_pembayaran" name="tanggal_pembayaran" required />
-            </div>
+  <!-- Tanggal Pembayaran -->
+  <div class="mb-3">
+    <label for="tanggal_pembayaran" class="form-label">Tanggal Pembayaran</label>
+    <input type="date" class="form-control" id="tanggal_pembayaran" name="tanggal_pembayaran" required />
+  </div>
 
-            <div class="text-center mt-4">
-              <a href="index.html">
-                <button type="button" class="btn btn-danger btn-lg" id="submitBtn">Konfirmasi Pembayaran</button>
-              </a>
-            </div>
-          </form>
+  <div class="text-center mt-4">
+    <!-- Remove the <a> tag and make the button a submit button -->
+    <button type="submit" class="btn btn-danger btn-lg" id="submitBtn">Konfirmasi Pembayaran</button>
+  </div>
+</form>
+
         </div>
       </div>
     </section>
