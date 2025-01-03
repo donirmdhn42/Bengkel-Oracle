@@ -142,12 +142,42 @@
     <!-- JavaScript -->
     <script>
       function tampilkanDeskripsi() {
+        <script>
+      function tampilkanDeskripsi() {
         const deskripsi = {
-          mekanik1: "Doni Setiawan Ramadhan: Ahli dalam perawatan mesin umum.",
-          mekanik2: "Dena Agustina: Berpengalaman dalam perbaikan rem dan suspensi.",
-          mekanik3: "Nazla Khaerunisa: Spesialis dalam diagnostik elektronik kendaraan.",
-          mekanik4: "Rizki Saepuloh: Fokus pada perawatan ban dan keseimbangan roda.",
-          mekanik5: "Komala Dewi: Ahli dalam perbaikan sistem AC kendaraan."
+          mekanik1: `
+            <strong>Doni Setiawan Ramadhan</strong><br>
+            <strong>ID:</strong> 2457201007<br>
+            <strong>Keahlian:</strong> Perawatan dan Perbaikan Mesin<br>
+            <em>Doni adalah seorang mekanik yang berpengalaman dalam perawatan berkala dan perbaikan mesin kendaraan. Beliau memastikan setiap kendaraan yang ditangani bekerja dengan efisiensi optimal.</em>
+          `,
+          mekanik2: `
+            <strong>Rizki Saepuloh</strong><br>
+            <strong>ID:</strong> 2457201021<br>
+            <strong>Keahlian:</strong> Sistem Kelistrikan Kendaraan<br>
+            <em>Rizki adalah ahli dalam sistem kelistrikan kendaraan, menangani perbaikan dan instalasi komponen elektrik dengan ketelitian tinggi.</em>
+          `,
+          mekanik3: `
+            <strong>Komala Dewi</strong><br>
+            <strong>ID:</strong> 2457201036<br>
+            <strong>Keahlian:</strong> Perbaikan Sistem Rem dan Suspensi<br>
+            <strong>No Telepon:</strong> +33-6-7890-1234<br>
+            <em>Komala memiliki keahlian dalam memperbaiki rem dan suspensi kendaraan, memberikan keamanan dan kenyamanan optimal bagi pengguna jalan.</em>
+          `,
+          mekanik4: `
+            <strong>Nazla Khaerunisa</strong><br>
+            <strong>ID:</strong> 2457201020<br>
+            <strong>Keahlian:</strong> Sistem Transmisi dan Kopling<br>
+            <strong>No Telepon:</strong> +61-438-9101-2345<br>
+            <em>Nazla adalah spesialis dalam perbaikan sistem transmisi dan kopling, memastikan kendaraan berfungsi dengan mulus dalam berbagai kondisi.</em>
+          `,
+          mekanik5: `
+            <strong>Dena Agustin</strong><br>
+            <strong>ID:</strong> 2457201017<br>
+            <strong>Keahlian:</strong> Diagnosis Masalah Kendaraan<br>
+            <strong>No Telepon:</strong> +49-170-1234-5678<br>
+            <em>Dena unggul dalam mendiagnosis masalah kendaraan secara cepat dan akurat, memberikan solusi terbaik untuk perbaikan lebih lanjut.</em>
+          `
         };
 
         const pilihanMekanik = document.getElementById("pilihanMekanik").value;
