@@ -3,3 +3,16 @@
     justify-content: center;
     align-items: center;
   }
+
+  .custom-btn {
+    background-color: hsl(0, 95%, 37%); /* Warna merah agak tua */
+    border: none; /* Menghapus border */
+    outline: none; /* Menghapus outline */
+  }
+  .custom-btn:hover {
+    background-color: hsl(0, 72%, 32%); /* Warna saat hover */
+  }
+
+  .custom-text {
+    color: hsl(0, 95%, 37%);
+  }

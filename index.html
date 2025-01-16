@@ -40,7 +40,7 @@
               <li><a href="erd.html">Diagram ERD</a></li>
             </ul>
           </div>
-          <a class="text-md text-red-500 font-bold">Bengkel Oracle</a>
+          <a class="text-md custom-text font-bold">Bengkel Oracle</a>
         </div>
 
         <!-- Menu Horizontal untuk Desktop -->
@@ -68,7 +68,7 @@
 
         <!-- Tombol Register di Kanan -->
         <div class="ml-auto">
-          <label for="my_modal_6" class="btn btn-error btn-sm text-white flex items-center">
+          <label for="my_modal_6" class="btn custom-btn btn-sm text-white flex items-center">
             <img src="https://img.icons8.com/?size=100&id=JFpp84FpjBA0&format=png&color=FFFFFF" alt="User Avatar" class="w-4 h-4 rounded-full" />
             Register
           </label>
@@ -85,7 +85,9 @@
         <p class="text-gray-200 text-base sm:text-lg lg:text-lg max-w-xl leading-relaxed">Kami hadir untuk memastikan kendaraan Anda selalu dalam kondisi prima. Dengan tim mekanik profesional dan peralatan modern.</p>
         <!-- Tombol -->
         <a href="#formLayanan">
-          <button class="btn btn btn-neutral px-6 py-3 text-white text-sm sm:text-md lg:text-lg font-medium rounded-lg shadow-md hover:bg-success-focus transition-all duration-300 ease-in-out">Order Now</button>
+          <button class="btn custom-btn px-6 py-3 text-white text-sm sm:text-md lg:text-lg font-medium">
+            <span class="text-white">Order Now</span>
+          </button>
         </a>
       </div>
     </div>
@@ -269,7 +271,7 @@
       <h2 class="text-2xl font-semibold text-center mb-6 text-black">Form Layanan Perawatan Kendaraan</h2>
       <form id="serviceForm" class="w-full max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg" autocomplete="off">
         <!-- Nama Customer -->
-        <div class="form-control mb-4">
+        <div class="form-control mb-4 bg-white">
           <label for="namaCustomer" class="label">
             <span class="label-text text-black">Nama Customer</span>
           </label>
@@ -351,12 +353,49 @@
             <option value="mekanik5">Komala Dewi</option>
           </select>
         </div>
+
+        <!-- ID Mekanik dan Deskripsi -->
+        <div id="mekanikInfo" class="text-center mb-4 hidden">
+          <p id="mekanikID" class="text-black font-semibold"></p>
+          <p id="keahlian" class="text-gray-700"></p>
+        </div>
+
         <!-- Tombol Order -->
-        <div class="text-center mt-6">
-          <a href="pembayaran.html" class="btn btn-error w-full text-white">Lanjutkan Pembayaran</a>
-        </div>        
+    <div class="text-center mt-6">
+      <a href="pembayaran.html" id="submitBtn" class="btn btn-error w-full text-white custom-btn">
+        Lanjutkan Pembayaran
+      </a>
+    </div>
       </form>
     </section>
+
+    <script>
+      const mekanikSelect = document.getElementById('pilihanMekanik');
+      const mekanikInfo = document.getElementById('mekanikInfo');
+      const mekanikID = document.getElementById('mekanikID');
+      const keahlian = document.getElementById('keahlian');
+
+      const mekanikDetails = {
+        mekanik1: { id: '2457201007', description: 'Spesialis mesin mobil dan motor.' },
+        mekanik2: { id: '2457201021', description: 'Ahli perawatan rem dan suspensi.' },
+        mekanik3: { id: '2457201036', description: 'Mekanik umum dengan pengalaman di berbagai tipe kendaraan.' },
+        mekanik4: { id: '2457201020', description: 'Spesialis perawatan elektronik dan sistem kelistrikan.' },
+        mekanik5: { id: '2457201017', description: 'Ahli dalam perawatan kendaraan diesel.' },
+      };
+
+      mekanikSelect.addEventListener('change', (e) => {
+        const selectedMekanik = e.target.value;
+
+        if (selectedMekanik) {
+          const detail = mekanikDetails[selectedMekanik];
+          mekanikID.textContent = `ID: ${detail.id}`;
+          keahlian.textContent = `Keahlian: ${detail.description}`;
+          mekanikInfo.classList.remove('hidden');
+        } else {
+          mekanikInfo.classList.add('hidden');
+        }
+      });
+    </script>
 
     <footer class="footer footer-center bg-white text-primary-content p-10">
       <aside>
@@ -370,7 +409,6 @@
         <p>Copyright ©2025 - All right reserved</p>
       </aside>
     </footer>
-    
 
     <!-- Modal -->
     <input type="checkbox" id="my_modal_6" class="modal-toggle" />
