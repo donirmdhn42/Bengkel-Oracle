@@ -5,209 +5,383 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bengkel Oracle</title>
     <link rel="icon" href="https://bengkelsinarnusantara.com/assets/images/services.png" type="image/png" />
-
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <style>
-      .navbar-brand img {
-        height: 40px; /* Adjust logo height */
-      }
-      .jumbotron-mechanic {
-        background: url('https://thumbs.dreamstime.com/b/automotive-engineer-working-production-line-overseeing-assembly-vehicles-ensuring-quality-control-standards-274990814.jpg') no-repeat center center;
-        background-size: cover;
-        color: white;
-        height: 70vh;
-      }
-      .jumbotron-overlay {
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 4rem;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-      }
-      .order-btn {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        padding: 10px 20px;
-        background-color: red;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      .order-btn:hover {
-        background-color: hsl(0, 0%, 100%);
-        color: red;
-      }
-
-      .navbar-brand {
-        color: red;
-      }
-
-      .icon-image {
-        max-width: 80px; /* Batasi lebar maksimum */
-        max-height: 80px; /* Batasi tinggi maksimum */
-        object-fit: contain; /* Menjaga proporsi gambar */
-      }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="https://app.appyreward.com/assets/appyreward/api-oracle.png" alt="Logo" />
-          <!-- Replace with your logo URL -->
-          <b>Bengkel Oracle</b>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+  <body class="bg-white text-black">
+    <!-- Navbar -->
+    <div class="navbar bg-white text-black fixed top-0 left-0 w-full z-50 shadow-lg">
+      <div class="container mx-auto px-4 flex flex-wrap items-center justify-between">
+        <!-- Logo dan Menu Hamburger di Mobile -->
+        <div class="navbar-start flex items-center">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content bg-white text-black rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#formLayanan">Layanan</a></li>
+              <li>
+                <details class="group">
+                  <summary class="cursor-pointer text-md">Bengkel</summary>
+                  <ul class="rounded-t-none p-2 bg-white">
+                    <li><a href="#">Purwakarta</a></li>
+                    <li><a href="#">Jakarta</a></li>
+                    <li><a href="#">Bandung</a></li>
+                    <li><a href="#">Surabaya</a></li>
+                    <li><a href="#">Yogyakarta</a></li>
+                    <li><a href="#">Bali</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li><a href="erd.html">Diagram ERD</a></li>
+            </ul>
+          </div>
+          <a class="text-md text-red-500 font-bold">Bengkel Oracle</a>
+        </div>
+
+        <!-- Menu Horizontal untuk Desktop -->
+        <div class="navbar-center hidden lg:flex bg-white">
+          <ul class="menu menu-horizontal px-1 text-sm lg:text-base">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#formLayanan">Layanan</a></li>
+            <!-- Dropdown Bengkel menggunakan <details> -->
+            <li>
+              <details class="group">
+                <summary class="cursor-pointer text-md">Bengkel</summary>
+                <ul class="rounded-t-none p-2 mt-1 bg-white">
+                  <li><a href="#">Purwakarta</a></li>
+                  <li><a href="#">Jakarta</a></li>
+                  <li><a href="#">Bandung</a></li>
+                  <li><a href="#">Surabaya</a></li>
+                  <li><a href="#">Yogyakarta</a></li>
+                  <li><a href="#">Bali</a></li>
+                </ul>
+              </details>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./layanan.html">Layanan</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./erd.html">ERD</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./mekanik.html">Mekanik</a>
-            </li>
+            <li><a href="erd.html">Diagram ERD</a></li>
           </ul>
         </div>
-      </div>
-    </nav>
 
-    <div class="jumbotron jumbotron-fluid jumbotron-mechanic" data-aos="fade-up">
-      <div class="jumbotron-overlay text-center">
-        <h1>Perawatan Kendaraan Terbaik untuk Anda</h1>
-        <p>
-          Kami hadir untuk memastikan kendaraan Anda selalu dalam kondisi prima. Dengan tim mekanik profesional dan peralatan modern.
-        </p>
-        <a href="layanan.html">
-          <button class="order-btn">Order Now</button>
+        <!-- Tombol Register di Kanan -->
+        <div class="ml-auto">
+          <label for="my_modal_6" class="btn btn-error btn-sm text-white flex items-center">
+            <img src="https://img.icons8.com/?size=100&id=JFpp84FpjBA0&format=png&color=FFFFFF" alt="User Avatar" class="w-4 h-4 rounded-full" />
+            Register
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jumbotron -->
+    <div class="relative bg-cover bg-center h-screen" style="background-image: url('https://cdn.dribbble.com/userupload/4289490/file/original-49037dda206adc751692f96615eb4312.jpg?resize=1200x675&vertical=center')">
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center space-y-6 px-6">
+        <!-- Judul -->
+        <h1 class="text-white text-xl sm:text-xl lg:text-5xl font-bold">Perawatan Kendaraan Terbaik untuk Anda</h1>
+        <!-- Deskripsi -->
+        <p class="text-gray-200 text-base sm:text-lg lg:text-lg max-w-xl leading-relaxed">Kami hadir untuk memastikan kendaraan Anda selalu dalam kondisi prima. Dengan tim mekanik profesional dan peralatan modern.</p>
+        <!-- Tombol -->
+        <a href="#formLayanan">
+          <button class="btn btn btn-neutral px-6 py-3 text-white text-sm sm:text-md lg:text-lg font-medium rounded-lg shadow-md hover:bg-success-focus transition-all duration-300 ease-in-out">Order Now</button>
         </a>
       </div>
     </div>
 
-    <section class="container my-5">
-      <div class="row text-center mb-4" data-aos="flip-up">
-        <h2 class="mb-3">Kenapa Memilih Kami?</h2>
-        <p class="text-muted" data-aos="fade-up">Kami adalah mitra terpercaya Anda untuk perawatan kendaraan yang berkualitas dan profesional.</p>
-      </div>
-      <div class="row">
-        <div class="col-md-4 text-center" data-aos="fade-right">
-          <img src="https://img.freepik.com/premium-vector/service-filled-outline-doodle-design-illustration-symbol-white-background-eps-10-file_848977-350.jpg?w=740" alt="Icon Layanan" class="icon-image mb-3" />
-          <h4>Layanan Berkualitas</h4>
-          <p>Kami menyediakan layanan yang memenuhi standar tertinggi untuk memastikan kendaraan Anda dalam kondisi terbaik.</p>
+    <!-- Kenapa Memilih Kami? -->
+    <section class="max-w-7xl mx-auto py-16" id="whychooseus">
+      <h3 class="text-3xl font-semibold text-center text-gray-800">Kenapa Memilih Kami?</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <!-- Card 1 - Mekanik Berpengalaman -->
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center transition transform hover:scale-105 hover:shadow-2xl">
+          <img src="https://img.freepik.com/free-vector/worker-man-labor-day-icon-isolated_24911-109580.jpg?ga=GA1.1.133572979.1731760341&semt=ais_hybrid" alt="Mekanik Berpengalaman" class="mx-auto mb-4 w-16 h-16" />
+          <h4 class="text-xl font-semibold text-gray-700">Mekanik Berpengalaman</h4>
+          <p class="mt-4 text-gray-600">Kami memiliki tim mekanik yang berpengalaman lebih dari 10 tahun di industri perawatan kendaraan.</p>
         </div>
-        <div class="col-md-4 text-center" data-aos="fade-left">
-          <img src="https://img.freepik.com/free-icon/professional-skills_318-877143.jpg" alt="Icon Profesional" class="icon-image mb-3" />
-          <h4>Mekanik Profesional</h4>
-          <p>Tim kami terdiri dari mekanik berpengalaman yang siap menangani kebutuhan kendaraan Anda dengan keahlian terbaik.</p>
+
+        <!-- Card 2 - Fasilitas Lengkap -->
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center transition transform hover:scale-105 hover:shadow-2xl">
+          <img src="https://cdn-icons-png.flaticon.com/128/10435/10435158.png" alt="Fasilitas Lengkap" class="mx-auto mb-4 w-16 h-16" />
+          <h4 class="text-xl font-semibold text-gray-700">Fasilitas Lengkap</h4>
+          <p class="mt-4 text-gray-600">Kami dilengkapi dengan peralatan canggih untuk memastikan setiap perawatan dan perbaikan kendaraan dilakukan dengan tepat.</p>
         </div>
-        <div class="col-md-4 text-center" data-aos="fade-right">
-          <img src="https://img.freepik.com/free-icon/money_318-876969.jpg" alt="Icon Harga" class="icon-image mb-3" />
-          <h4>Harga Terjangkau</h4>
-          <p>Kami menawarkan harga yang kompetitif tanpa mengorbankan kualitas layanan yang Anda terima.</p>
+
+        <!-- Card 3 - Harga Terjangkau -->
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center transition transform hover:scale-105 hover:shadow-2xl">
+          <img src="https://cdn-icons-png.flaticon.com/128/1728/1728450.png" alt="Harga Terjangkau" class="mx-auto mb-4 w-16 h-16" />
+          <h4 class="text-xl font-semibold text-gray-700">Harga Terjangkau</h4>
+          <p class="mt-4 text-gray-600">Kami menawarkan layanan berkualitas tinggi dengan harga yang bersaing dan terjangkau bagi semua kalangan.</p>
         </div>
       </div>
     </section>
 
-    <section class="bg-light py-5">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-          <div class="col-md-6">
-            <h3>Tentang Kami</h3>
-            <p>
-              Kami adalah penyedia layanan perawatan kendaraan terpercaya yang berdedikasi untuk memberikan pengalaman terbaik kepada pelanggan. Dengan peralatan modern dan teknologi terkini, kami memastikan kendaraan Anda mendapat
-              perawatan terbaik.
-            </p>
+    <!-- Tentang Kami -->
+    <section class="bg-gray-100 py-16" id="about">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- Teks di Kiri -->
+        <div class="text-center md:text-left">
+          <h3 class="text-3xl font-semibold text-gray-800">Tentang Kami</h3>
+          <p class="mt-4 text-lg text-gray-600">
+            Kami adalah bengkel kendaraan yang berfokus pada perawatan dan perbaikan kendaraan dengan mekanik berpengalaman dan fasilitas yang lengkap. Dengan lebih dari 10 tahun pengalaman, kami memberikan pelayanan terbaik untuk kendaraan
+            Anda.
+          </p>
+        </div>
+        <!-- Gambar Mobil di Kanan -->
+        <div class="text-center">
+          <img src="https://danilchukautobody.com/wp-content/uploads/2020/05/Full-Auto-Body-Repair-img.png" alt="Mobil" class="w-full h-auto max-w-md mx-auto" />
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto py-16 mt-3" id="howtobook">
+      <h3 class="text-3xl font-semibold text-center text-gray-800 mb-16">Proses Pemesanan Layanan Kami</h3>
+      <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+        <!-- Step 1 -->
+        <li>
+          <div class="timeline-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-blue-500">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+            </svg>
           </div>
-          <div class="col-md-6" data-aos="fade-left">
-            <img src="https://danilchukautobody.com/wp-content/uploads/2020/05/Full-Auto-Body-Repair-img.png" alt="Tentang Kami" class="img-fluid rounded" />
+          <div class="timeline-start mb-12 text-center md:text-end">
+            <time class="text-gray-600">Step 1</time>
+            <div class="text-lg font-bold text-gray-800">Pilih Layanan</div>
+            Pilih layanan yang Anda butuhkan, seperti perawatan berkala, perbaikan kerusakan, atau pemeriksaan kendaraan.
+          </div>
+          <hr />
+        </li>
+
+        <!-- Step 2 -->
+        <li>
+          <hr />
+          <div class="timeline-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-blue-500">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="timeline-end mb-12 text-center md:text-start">
+            <time class="text-gray-600">Step 2</time>
+            <div class="text-lg font-bold text-gray-800">Isi Form Pemesanan</div>
+            Isi form pemesanan dengan informasi kendaraan Anda dan pilih jadwal servis yang diinginkan.
+          </div>
+          <hr />
+        </li>
+
+        <!-- Step 3 -->
+        <li>
+          <hr />
+          <div class="timeline-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-blue-500">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="timeline-start mb-12 text-center md:text-end">
+            <time class="text-gray-600">Step 3</time>
+            <div class="text-lg font-bold text-gray-800">Datang ke Bengkel</div>
+            Datang ke bengkel kami sesuai jadwal yang telah disepakati dan nikmati layanan terbaik kami!
+          </div>
+          <hr />
+        </li>
+
+        <!-- Step 4 -->
+        <li>
+          <hr />
+          <div class="timeline-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-blue-500">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="timeline-end text-center md:text-start">
+            <time class="text-gray-600">Step 4</time>
+            <div class="text-lg font-bold text-gray-800">Konfirmasi Pembayaran</div>
+            Setelah pembayaran dikonfirmasi, mekanik kami akan segera melaksanakan layanan untuk Anda.
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="py-8 bg-gray-50" id="testimonials">
+      <h2 class="text-2xl font-semibold text-center mb-6 text-black">Testimoni Pelanggan</h2>
+      <div class="space-y-4 max-w-4xl mx-auto">
+        <!-- Testimoni 1 -->
+        <div class="flex items-start space-x-4 p-4 bg-white shadow rounded-lg">
+          <div class="avatar">
+            <div class="w-12 h-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <img src="https://th.bing.com/th/id/OIP.E5q0jmpzPV9sHOK53oY2dQHaHa?pid=ImgDet&w=474&h=474&rs=1" alt="Avatar Andi" />
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-black">Zidan Akbar</h4>
+            <p class="text-sm text-gray-600">"Layanan sangat cepat dan profesional. Kendaraan saya selalu dalam kondisi terbaik setelah diservis di sini!"</p>
+            <div class="rating mt-2">
+              <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" disabled />
+              <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" disabled />
+              <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" disabled />
+              <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" checked />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" disabled />
+            </div>
+          </div>
+        </div>
+        <!-- Testimoni 2 -->
+        <div class="flex items-start space-x-4 p-4 bg-white shadow rounded-lg">
+          <div class="avatar">
+            <div class="w-12 h-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <img src="https://th.bing.com/th/id/OIP.nf7Str5KnsWHIPeDyYCh_QAAAA?w=164&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Avatar Rina" />
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-black">Dinda Aulia</h4>
+            <p class="text-sm text-gray-600">"Harga sangat terjangkau dan pelayanan ramah. Saya pasti akan kembali lagi!"</p>
+            <div class="rating mt-2">
+              <input type="radio" name="rating-4" class="mask mask-star-2 bg-orange-400" disabled />
+              <input type="radio" name="rating-4" class="mask mask-star-2 bg-orange-400" disabled />
+              <input type="radio" name="rating-4" class="mask mask-star-2 bg-orange-400" disabled />
+              <input type="radio" name="rating-4" class="mask mask-star-2 bg-orange-400" disabled />
+              <input type="radio" name="rating-4" class="mask mask-star-2 bg-orange-400" checked />
+            </div>
+          </div>
+        </div>
+        <!-- Testimoni 3 -->
+        <div class="flex items-start space-x-4 p-4 bg-white shadow rounded-lg">
+          <div class="avatar">
+            <div class="w-12 h-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <img src="https://th.bing.com/th/id/OIP.6d4OgtrSr2gxBQ8Uk_I4IwHaHa?w=176&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Avatar Budi" />
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-black">Bima Arya</h4>
+            <p class="text-sm text-gray-600">"Saya sangat puas dengan hasil pekerjaan dan waktu pengerjaan yang efisien. Terima kasih!"</p>
+            <div class="rating mt-2">
+              <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" disabled />
+              <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" disabled />
+              <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" disabled />
+              <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" checked />
+              <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" disabled />
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-5">
-      <div class="container text-center" data-aos="fade-up">
-        <h3 class="mb-4">Apa Kata Pelanggan Kami?</h3>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card p-3">
-              <p>"Layanan di sini sangat memuaskan. Mekaniknya ramah dan profesional. Kendaraan saya sekarang terasa seperti baru lagi!"</p>
-              <h5>- Andi Pratama</h5>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card p-3">
-              <p>"Pelayanan yang cepat dan harga yang terjangkau. Saya sangat merekomendasikan tempat ini kepada teman-teman saya."</p>
-              <h5>- Siti Rahma</h5>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card p-3">
-              <p>"Pengerjaan yang detail dan memuaskan. Saya akan kembali lagi untuk perawatan kendaraan berikutnya."</p>
-              <h5>- Budi Santoso</h5>
-            </div>
-          </div>
+    <section class="py-8 bg-white" id="formLayanan">
+      <h2 class="text-2xl font-semibold text-center mb-6 text-black">Form Layanan Perawatan Kendaraan</h2>
+      <form id="serviceForm" class="w-full max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg" autocomplete="off">
+        <!-- Nama Customer -->
+        <div class="form-control mb-4">
+          <label for="namaCustomer" class="label">
+            <span class="label-text text-black">Nama Customer</span>
+          </label>
+          <input
+            type="text"
+            id="namaCustomer"
+            class="input input-bordered w-full bg-white text-black placeholder-gray-500 border-gray-300 focus:outline-none focus:ring-0 focus:bg-white focus:border-gray-300"
+            placeholder="Masukkan nama Anda"
+            autocomplete="off"
+            required
+          />
         </div>
-      </div>
+        <!-- Nomor Telepon -->
+        <div class="form-control mb-4">
+          <label for="telepon" class="label">
+            <span class="label-text text-black">Nomor Telepon</span>
+          </label>
+          <input
+            type="text"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            id="telepon"
+            class="input input-bordered w-full bg-white text-black placeholder-gray-500 border-gray-300 focus:outline-none focus:ring-0 focus:bg-white focus:border-gray-300"
+            placeholder="62xxxxxxxxx"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <!-- Merk Kendaraan -->
+        <div class="form-control mb-4">
+          <label for="merkKendaraan" class="label">
+            <span class="label-text text-black">Merk Kendaraan</span>
+          </label>
+          <input
+            type="text"
+            id="merkKendaraan"
+            class="input input-bordered w-full bg-white text-black placeholder-gray-500 border-gray-300 focus:outline-none focus:ring-0 focus:bg-white focus:border-gray-300"
+            placeholder="Contoh: Toyota, Honda"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <!-- Tipe Kendaraan -->
+        <div class="form-control mb-4">
+          <label for="tipeKendaraan" class="label">
+            <span class="label-text text-black">Tipe Kendaraan</span>
+          </label>
+          <select id="tipeKendaraan" class="select select-bordered w-full bg-white text-black placeholder-gray-500 border-gray-300 focus:outline-none focus:ring-0 focus:bg-white focus:border-gray-300" required>
+            <option value="" disabled selected>Pilih salah satu Tipe</option>
+            <option value="Mobil">Mobil</option>
+            <option value="Motor">Motor</option>
+          </select>
+        </div>
+        <!-- Plat Nomor -->
+        <div class="form-control mb-4">
+          <label for="platNomor" class="label">
+            <span class="label-text text-black">Plat Nomor</span>
+          </label>
+          <input
+            type="text"
+            id="platNomor"
+            class="input input-bordered w-full bg-white text-black placeholder-gray-500 border-gray-300 focus:outline-none focus:ring-0 focus:bg-white focus:border-gray-300"
+            placeholder="Contoh: B 1234 ABC"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <!-- Pilihan Mekanik -->
+        <div class="form-control mb-4">
+          <label for="pilihanMekanik" class="label">
+            <span class="label-text text-black">Pilih Mekanik</span>
+          </label>
+          <select id="pilihanMekanik" class="select select-bordered w-full bg-white text-black placeholder-gray-500 border-gray-300 focus:outline-none focus:ring-0 focus:bg-white focus:border-gray-300" required>
+            <option value="" disabled selected>Pilih salah satu mekanik</option>
+            <option value="mekanik1">Doni Setiawan Ramadhan</option>
+            <option value="mekanik2">Dena Agustina</option>
+            <option value="mekanik3">Nazla Khaerunisa</option>
+            <option value="mekanik4">Rizki Saepuloh</option>
+            <option value="mekanik5">Komala Dewi</option>
+          </select>
+        </div>
+        <!-- Tombol Order -->
+        <div class="text-center mt-6">
+          <a href="pembayaran.html" class="btn btn-error w-full text-white">Lanjutkan Pembayaran</a>
+        </div>        
+      </form>
     </section>
 
-    <footer class="bg-dark text-light py-4">
-      <div class="container" data-aos="fade-up">
-        <a class="navbar-brand" href="#">
-          <img src="https://app.appyreward.com/assets/appyreward/api-oracle.png" alt="Logo" />
-          <!-- Replace with your logo URL -->
-          <b>Bengkel Oracle</b><br />
-        </a>
-        <div class="row">
-          <!-- Informasi Kontak -->
-          <div class="col-md-4 mb-3 mt-3">
-            <h5>Kontak Kami</h5>
-            <p>
-              Jl. Perawatan Kendaraan No.123<br />
-              Kota Mekanik, Indonesia<br />
-              Telp: +62 812 3456 7890<br />
-              Email: info@Bengkeloracle.com
-            </p>
-          </div>
-
-          <!-- Navigasi Cepat -->
-          <div class="col-md-4 mb-3 mt-3">
-            <h5>Navigasi Cepat</h5>
-            <ul class="list-unstyled">
-              <li><a href="./index.html" class="text-light text-decoration-none">Beranda</a></li>
-              <li><a href="./layanan.html" class="text-light text-decoration-none">Layanan</a></li>
-              <li><a href="./erd.html" class="text-light text-decoration-none">Erd</a></li>
-              <li><a href="./mekanik.html" class="text-light text-decoration-none">Mekanik</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="text-center mt-3">
-          <small>&copy; 2025 Bengkel Oracle.</small>
-        </div>
-      </div>
+    <footer class="footer footer-center bg-white text-primary-content p-10">
+      <aside>
+        <!-- Ganti SVG dengan Image -->
+        <img src="https://softwarereviews.s3.amazonaws.com/production/favicons/offerings/8451/original/logo1012.png" alt="Logo Bengkel Oracle" class="inline-block w-12 h-12" />
+        <p class="font-bold">
+          Bengkel Oracle
+          <br />
+          Jasa Perawatan Kendaraan
+        </p>
+        <p>Copyright ©2025 - All right reserved</p>
+      </aside>
     </footer>
+    
 
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Modal -->
+    <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+    <div class="modal" role="dialog">
+      <div class="modal-box bg-white">
+        <h3 class="text-lg font-bold">Maaf,</h3>
+        <p class="py-1">Registrasi belum tersedia saat ini.</p>
+        <div class="modal-action">
+          <label for="my_modal_6" class="btn btn-error btn-sm text-white">Close!</label>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

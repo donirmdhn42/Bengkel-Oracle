@@ -5,132 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bengkel Oracle</title>
     <link rel="icon" href="https://bengkelsinarnusantara.com/assets/images/services.png" type="image/png" />
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <style>
-      .navbar-brand img {
-        height: 40px; /* Adjust logo height */
-      }
-     
-      .navbar-brand {
-        color: red;
-      }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="https://app.appyreward.com/assets/appyreward/api-oracle.png" alt="Logo" />
-          <!-- Replace with your logo URL -->
-          <b>Bengkel Oracle</b>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+  <body class="bg-white text-black">
+    <!-- Navbar -->
+    <div class="navbar bg-white text-black fixed top-0 left-0 w-full z-50 shadow-lg">
+      <div class="container mx-auto px-4 flex flex-wrap items-center justify-between">
+        <!-- Logo dan Menu Hamburger di Mobile -->
+        <div class="navbar-start flex items-center">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content bg-white text-black rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#formLayanan">Layanan</a></li>
+              <li>
+                <details class="group">
+                  <summary class="cursor-pointer text-md">Bengkel</summary>
+                  <ul class="rounded-t-none p-2 bg-white">
+                    <li><a href="#">Purwakarta</a></li>
+                    <li><a href="#">Jakarta</a></li>
+                    <li><a href="#">Bandung</a></li>
+                    <li><a href="#">Surabaya</a></li>
+                    <li><a href="#">Yogyakarta</a></li>
+                    <li><a href="#">Bali</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li><a href="erd.html">Diagram ERD</a></li>
+            </ul>
+          </div>
+          <a class="text-md text-red-500 font-bold">Bengkel Oracle</a>
+        </div>
+
+        <!-- Menu Horizontal untuk Desktop -->
+        <div class="navbar-center hidden lg:flex bg-white">
+          <ul class="menu menu-horizontal px-1 text-sm lg:text-base">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="index.html#formLayanan">Layanan</a></li>
+            <!-- Dropdown Bengkel menggunakan <details> -->
+            <li>
+              <details class="group">
+                <summary class="cursor-pointer text-md">Bengkel</summary>
+                <ul class="rounded-t-none p-2 mt-1 bg-white">
+                  <li><a href="#">Purwakarta</a></li>
+                  <li><a href="#">Jakarta</a></li>
+                  <li><a href="#">Bandung</a></li>
+                  <li><a href="#">Surabaya</a></li>
+                  <li><a href="#">Yogyakarta</a></li>
+                  <li><a href="#">Bali</a></li>
+                </ul>
+              </details>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./layanan.html">Layanan</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="./erd.html">ERD</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./mekanik.html">Mekanik</a>
-            </li>
+            <li><a href="./erd.html">Diagram ERD</a></li>
           </ul>
         </div>
-      </div>
-    </nav>
 
-    <section class="container my-5" data-aos="fade-up">
-        <h2 class="text-center mb-4">Entity Relationship Diagram (ERD)</h2>
-        
-        <!-- Menampilkan Gambar ERD -->
-        <div class="text-center mb-4">
-            <img src="./erd.png" alt="Entity Relationship Diagram" class="img-fluid rounded">
+        <!-- Tombol Register di Kanan -->
+        <div class="ml-auto">
+          <label for="my_modal_6" class="btn btn-error btn-sm text-white flex items-center">
+            <img src="https://img.icons8.com/?size=100&id=JFpp84FpjBA0&format=png&color=FFFFFF" alt="User Avatar" class="w-4 h-4 rounded-full" />
+            Register
+          </label>
         </div>
-    
-        <!-- Penjelasan ERD -->
-        <div class="row" data-aos="fade-up">
-            <div class="col-md-12">
-                <h4>Penjelasan ERD:</h4>
-                <p>
-                    Entity Relationship Diagram (ERD) ini menggambarkan hubungan antar entitas dalam sistem kami. 
-                    Berikut adalah penjelasan untuk setiap komponen yang ada dalam diagram ini:
-                </p>
-                <ul>
-                  <li><strong>Entity "Perawatan"</strong>: Menyimpan data layanan perawatan yang diberikan kepada kendaraan, termasuk jenis perawatan, biaya perawatan, tanggal perawatan, dan status perawatan.</li>
-                  <li><strong>Entity "Mekanik"</strong>: Menyimpan informasi tentang mekanik, seperti nama, kartu kerja, keahlian, dan kontak (telepon) mekanik.</li>
-                  <li><strong>Entity "Kendaraan"</strong>: Menyimpan data kendaraan yang dimiliki oleh pelanggan, termasuk plat nomor, merek, tipe, status perawatan, dan pemilik kendaraan.</li>
-                  <li><strong>Entity "Bengkel"</strong>: Menyimpan informasi tentang bengkel yang menangani perawatan kendaraan, termasuk kaitannya dengan mekanik, kendaraan, dan perawatan.</li>
-                  <li><strong>Entity "Customer"</strong>: Menyimpan data pelanggan, seperti nama, alamat, telepon, email, dan profil pelanggan.</li>
-                  <li><strong>Entity "Pembayaran"</strong>: Menyimpan data pembayaran terkait dengan perawatan, termasuk tanggal pembayaran, jumlah pembayaran, metode pembayaran, dan status pembayaran.</li>
-                  <li><strong>Entity "Profil"</strong>: Menyimpan data profil pelanggan, seperti nama, alamat, dan tanggal lahir.</li>
-                  <br>
-                  <li><strong>Relasi antar entitas</strong>: 
-                    <ul>
+      </div>
+    </div>
+
+    <section class="container my-5 flex justify-center items-center p-5" style="min-height: 80vh;" data-aos="fade-up">
+      <div class="card bg-white-200 shadow-xl p-9 max-w-4xl w-full mt-20">
+          <h2 class="text-center mb-6 text-2xl font-bold">Entity Relationship Diagram (ERD) Manajemen Perawatan Kendaraan</h2>
+  
+          <!-- Menampilkan Gambar ERD -->
+          <div class="text-center mb-6">
+              <img src="./erd.png" alt="Entity Relationship Diagram" class="max-w-full h-auto rounded-lg shadow-md">
+          </div>
+  
+          <!-- Penjelasan ERD -->
+          <div class="space-y-6">
+              <div>
+                  <h4 class="text-xl font-semibold mb-3">Penjelasan ERD:</h4>
+                  <p class="text-gray-700">
+                      Entity Relationship Diagram (ERD) ini menggambarkan hubungan antar entitas dalam sistem kami. 
+                      Berikut adalah penjelasan untuk setiap komponen yang ada dalam diagram ini:
+                  </p>
+              </div>
+  
+              <div class="space-y-4">
+                  <ul class="list-inside list-disc text-gray-800">
+                      <li><strong class="text-lg">Entity "Perawatan"</strong>: Menyimpan data layanan perawatan yang diberikan kepada kendaraan, termasuk jenis perawatan, biaya perawatan, tanggal perawatan, dan status perawatan.</li>
+                      <li><strong class="text-lg">Entity "Mekanik"</strong>: Menyimpan informasi tentang mekanik, seperti nama, kartu kerja, keahlian, dan kontak (telepon) mekanik.</li>
+                      <li><strong class="text-lg">Entity "Kendaraan"</strong>: Menyimpan data kendaraan yang dimiliki oleh pelanggan, termasuk plat nomor, merek, tipe, status perawatan, dan pemilik kendaraan.</li>
+                      <li><strong class="text-lg">Entity "Bengkel"</strong>: Menyimpan informasi tentang bengkel yang menangani perawatan kendaraan, termasuk kaitannya dengan mekanik, kendaraan, dan perawatan.</li>
+                      <li><strong class="text-lg">Entity "Customer"</strong>: Menyimpan data pelanggan, seperti nama, alamat, telepon, email, dan profil pelanggan.</li>
+                      <li><strong class="text-lg">Entity "Pembayaran"</strong>: Menyimpan data pembayaran terkait dengan perawatan, termasuk tanggal pembayaran, jumlah pembayaran, metode pembayaran, dan status pembayaran.</li>
+                      <li><strong class="text-lg">Entity "Profil"</strong>: Menyimpan data profil pelanggan, seperti nama, alamat, dan tanggal lahir.</li>
+                  </ul>
+              </div>
+  
+              <div>
+                  <h5 class="text-lg font-semibold mb-3">Relasi antar entitas:</h5>
+                  <ul class="list-inside list-decimal text-gray-800 space-y-2">
                       <li><strong>Perawatan - Kendaraan</strong>: Setiap perawatan terkait dengan satu kendaraan, tetapi satu kendaraan dapat memiliki banyak perawatan (1:M).</li>
                       <li><strong>Perawatan - Mekanik</strong>: Setiap perawatan dilakukan oleh satu mekanik, tetapi satu mekanik dapat menangani banyak perawatan (1:M).</li>
                       <li><strong>Perawatan - Bengkel</strong>: Setiap perawatan dilakukan di satu bengkel, tetapi satu bengkel dapat menangani banyak perawatan (1:M).</li>
                       <li><strong>Kendaraan - Customer</strong>: Setiap kendaraan dimiliki oleh satu pelanggan, tetapi satu pelanggan dapat memiliki banyak kendaraan (1:M).</li>
                       <li><strong>Pembayaran - Perawatan</strong>: Setiap pembayaran terkait dengan satu perawatan, tetapi satu perawatan dapat memiliki banyak pembayaran (1:M).</li>
                       <li><strong>Customer - Profil</strong>: Setiap pelanggan memiliki satu profil, dan setiap profil terkait dengan satu pelanggan (1:1).</li>
-                    </ul>
-                  </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+
+    <footer class="footer footer-center bg-white text-primary-content p-10">
+      <aside>
+        <!-- Ganti SVG dengan Image -->
+        <img src="https://softwarereviews.s3.amazonaws.com/production/favicons/offerings/8451/original/logo1012.png" alt="Logo Bengkel Oracle" class="inline-block w-12 h-12" />
+        <p class="font-bold">
+          Bengkel Oracle
+          <br />
+          Jasa Perawatan Kendaraan
+        </p>
+        <p>Copyright ©2025 - All right reserved</p>
+      </aside>
+    </footer>
     
 
-    <footer class="bg-dark text-light py-4">
-        <div class="container" data-aos="fade-up">
-          <a class="navbar-brand" href="#">
-            <img src="https://app.appyreward.com/assets/appyreward/api-oracle.png" alt="Logo" />
-            <!-- Replace with your logo URL -->
-            <b>Bengkel Oracle</b><br>
-          </a>
-          <div class="row">
-            <!-- Informasi Kontak -->
-            <div class="col-md-4 mb-3 mt-3">
-              <h5>Kontak Kami</h5>
-              <p>
-                Jl. Perawatan Kendaraan No.123<br />
-                Kota Mekanik, Indonesia<br />
-                Telp: +62 812 3456 7890<br />
-                Email: info@Bengkeloracle.com
-              </p>
-            </div>
-  
-            <!-- Navigasi Cepat -->
-            <div class="col-md-4 mb-3 mt-3">
-              <h5>Navigasi Cepat</h5>
-              <ul class="list-unstyled">
-                <li><a href="./index.html" class="text-light text-decoration-none">Beranda</a></li>
-                <li><a href="./layanan.html" class="text-light text-decoration-none">Layanan</a></li>
-                <li><a href="./erd.html" class="text-light text-decoration-none">Erd</a></li>
-                <li><a href="./mekanik.html" class="text-light text-decoration-none">Mekanik</a></li>
-              </ul>
-            </div>
-  
-          </div>
-          <div class="text-center mt-3">
-            <small>&copy; 2025 Bengkel Oracle.</small>
-          </div>
+    <!-- Modal -->
+    <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+    <div class="modal" role="dialog">
+      <div class="modal-box bg-white">
+        <h3 class="text-lg font-bold">Maaf,</h3>
+        <p class="py-1">Registrasi belum tersedia saat ini.</p>
+        <div class="modal-action">
+          <label for="my_modal_6" class="btn btn-error btn-sm text-white">Close!</label>
         </div>
-      </footer>
-
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+      </div>
+    </div>
   </body>
 </html>
